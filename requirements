@@ -1,0 +1,14 @@
+Requirements-
+............
+
+1. Must be able to read .xls or .xlsx or .ods extension files.
+
+2. Ability to describe excel file. [Description format is diaplyed below]
+     * Filename : Kindergarten.xls
+     * Topics   : 10
+     * Concepts : 78 [Unique-78]
+     * Patterns : 345 [PK-10; KI-50; S1-285], [Unique-330]
+
+3. Ability to validate excel file. [Update details to be validated here]
+
+4. 
