@@ -19,9 +19,9 @@ public class XLPValidator {
 
 
 
-    public static List validate() {
+    public static List validate(String filename) {
 
-        Sheet sheet = ReadExcel.read("/home/manish/Desktop/template.xls");
+        Sheet sheet = ReadExcel.read(filename);
         List<String> errorList = new ArrayList<>();
 
         for(Row row : sheet){
@@ -53,7 +53,6 @@ public class XLPValidator {
         }
 
         return errorList;
-
     }
 
     private static String validateTopic(String val, int col, int row) {
@@ -114,12 +113,10 @@ public class XLPValidator {
         return "Error: " + errorDesc + " @ " + "C" + col + ": R" + row + ".";
     }
 
+    /**
     public static void main(String[] args) {
 
-        List<String> l = validate();
-        for (String s : l) {
-            System.out.println(s);
-        }
     }
+    **/
 
 }

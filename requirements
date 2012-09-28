@@ -1,14 +1,52 @@
 Requirements-
 ............
 
-1. Must be able to read .xls or .xlsx or .ods extension files.
+1. Must be able to read .xls or .xlsx or .ods extension files. --- COMPLETED
 
-2. Ability to describe excel file. [Description format is diaplyed below]
+2. Ability to describe excel file. [Description format is diaplyed below] --- COMPLETED
      * Filename : Kindergarten.xls
      * Topics   : 10
      * Concepts : 78 [Unique-78]
      * Patterns : 345 [PK-10; KI-50; S1-285], [Unique-330]
 
-3. Ability to validate excel file. [Update details to be validated here]
+3. Ability to validate excel file. [Update details to be validated here]  --- COMPLETED
 
-4. 
+   * Validation for column[0] - Must be in sentence case
+   * Validation for column[1] - Must be in Sentence case
+   * Validation for column[2] - Must be in Lower case, and no spaces allowed here
+   * Validation for column[3] - Must be in Lower case, and no spaces allowed here
+   * Validation for column[4] - Value has some finite range possible only [PK, KI, S1, S2, S3, ... ,S12]
+
+4. Generate sql script from excel sheet --- COMPLETED
+   
+   * input details required are: 0-filename.sql; 1-lastTopicID; 2-lastConceptID; 3-lastPatternID; 4-standardID 
+
+5. Check all patterns are available in specified folder --- COMPLETED
+
+   * input details required are: 0-folder-location
+
+-----------------------------------------------------------------------------------------------------------------
+
+* Documentation
+
+1. Get basic description of document --> $xlp -desc file.xls
+
+2. Validate excel file --> $xlp -val file.xls
+
+3. Generate sql file from excel file --> $xlp -sql opfile.sql topicid conceptid patternid stdid file.xls
+
+4. Check patterns in folder --> $xlp -check folderpath file.xls
+
+5. Print help for using xlp --> $xlp -help
+
+-----------------------------------------------------------------------------------------------------------------
+
+27th Sept 2012
+
+My first independent tool for internal purpose is wrrtten and completed in three days. I think it will be helpful to us in next some days to automate whole process of deployment of standard and its data to server.
+
+Before this it was a very hectic process which includes some compulsary steps to be followed. But now it is reduced to almost single command level. 
+
+I will keep this software updated according to our needs and purposes and requirements.
+
+Bye.

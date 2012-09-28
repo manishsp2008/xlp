@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,21 +25,24 @@ import org.apache.poi.ss.usermodel.Sheet;
  */
 public class CreateSQL {
 
+    /**
     public static void main(String[] args) {
-        create("/home/manish/Desktop/template.sql", 10, 38, 165, 102);
+        create("/home/manish/Desktop/template.sql", 10, 38, 165, 102, "/home/manish/Desktop/template.xls");
     }
+    **/
 
-    private static boolean create(String filename, int lastTopicID, int lastConceptID, int lastPatternID, int stdID) {
+    public static boolean create(String opfile, int lastTopicID, int lastConceptID, int lastPatternID, int stdID, String ipFile) {
 
         // Read input parameters
-        String opfile = filename;
+        //String opfile = opFile;
         int strTopicID = lastTopicID;
         int strConceptID = lastConceptID;
         int strPatternID = lastPatternID;
         int patType = 1;
 
         // Read excel sheet
-        Sheet sheet = ReadExcel.read("/home/manish/Desktop/template.xls");
+        //Sheet sheet = ReadExcel.read("/home/manish/Desktop/template.xls");
+        Sheet sheet = ReadExcel.read(ipFile);
 
         // create list of XLPattern
         List<XLPattern> patList = new ArrayList<>();

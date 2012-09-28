@@ -5,7 +5,6 @@
 package com.myplanet.utils;
 
 import java.io.File;
-import java.util.List;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
@@ -15,10 +14,10 @@ import org.apache.poi.ss.usermodel.Sheet;
  */
 public class SyncTest {
 
-    private static List test(String folderLoc) {
+    public static void test(String folderLoc, String filename) {
 
         // Read excel file
-        String filename = "/home/manish/Desktop/template.xls";
+        //String filename = "/home/manish/Desktop/template.xls";
         Sheet sheet = ReadExcel.read(filename);
         File file;
         String filePath;
@@ -35,15 +34,12 @@ public class SyncTest {
                 }
             }
         }
-        // check files in folder
-
-
-
-        return null;
     }
 
+    /**
     public static void main(String[] args) {
-        test("/home/manish/workspace/praktick/kindergarten/patterns/");
+        test("/home/manish/workspace/praktick/kindergarten/patterns/","/home/manish/Desktop/template.xls");
     }
+    **/
 
 }

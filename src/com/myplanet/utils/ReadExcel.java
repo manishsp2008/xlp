@@ -63,13 +63,13 @@ public class ReadExcel {
         }
     }
 
-    public static void getDescription() {
+    public static void getDescription(String filename) {
 
-        String filename = "/home/manish/Desktop/template.xls";
+        //String filename = "/home/manish/Desktop/template.xls";
         Sheet sheet1 = read(filename);
 
         // Print description
-        System.out.println("Filename - " + filename.split("/")[filename.split("/").length-1]);
+        System.out.println("Filename - " + filename.split("/")[filename.split("/").length - 1]);
         System.out.println("Topics - " + (getTopics(sheet1).size()));
         System.out.println("Concepts - " + (getConcepts(sheet1).size()));
         System.out.println("Urls - " + (getUrls(sheet1).size()));
@@ -153,7 +153,9 @@ public class ReadExcel {
         return map;
     }
 
-    public static void main(String[] args) {
-        getDescription();
+    /**
+    public static void main(String[] args) throws IOException {
+        getDescription("/home/manish/Desktop/"+"template.xls");
     }
+    **/
 }
