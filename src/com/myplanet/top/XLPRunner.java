@@ -8,6 +8,7 @@ import com.myplanet.utils.CreateSQL;
 import com.myplanet.utils.ReadExcel;
 import com.myplanet.utils.SyncTest;
 import com.myplanet.utils.XLPValidator;
+import java.util.List;
 
 /**
  *
@@ -105,18 +106,27 @@ public class XLPRunner {
 
         if (args.length > 2) {
 
-            printError("Too many arguments.Please refer help.");
+            printError("Too many arguments. Please refer help.");
 
         } else {
 
             // validate file
             validateXLFile(args[1]);
             // prepare full path
-            //String curDir = System.getProperty("user.dir");
-            //String fullPath = curDir + "/" + args[1];
+            // String curDir = System.getProperty("user.dir");
+            // String fullPath = curDir + "/" + args[1];
             String fullPath = args[1];
-            // execute logic
-            XLPValidator.validate(fullPath);
+            // Get errors returned by validation module
+            List<String> list = XLPValidator.validate(fullPath);
+			// print errors
+			if(list.size()>0){
+				System.out.println("Grea, everything is fine and upto the rules.");
+			} else {
+				for (String str : list) {
+					System.out.println(str);
+				}
+			}
+
         }
     }
 
