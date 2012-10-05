@@ -118,14 +118,15 @@ public class XLPRunner {
             String fullPath = args[1];
             // Get errors returned by validation module
             List<String> list = XLPValidator.validate(fullPath);
-			// print errors
-			if(list.size()>0){
-				System.out.println("Grea, everything is fine and upto the rules.");
-			} else {
-				for (String str : list) {
-					System.out.println(str);
-				}
-			}
+            // print errors
+            if (list.size() > 0) {
+                System.out.println("Total rule violations found - " + list.size());
+                for (String str : list) {
+                    System.out.println(str);
+                }
+            } else {
+                System.out.println("Great, Everything is fine and upto the rules.");
+            }
 
         }
     }
@@ -206,7 +207,7 @@ public class XLPRunner {
         /**
          * if (filename.split(".")[1].equals("xls")) { return true; } else {
          * printError("Bad filename or invalid file provided."); return false; }
-        * *
+         * *
          */
         return true;
     }
